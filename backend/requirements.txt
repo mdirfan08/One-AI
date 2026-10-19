@@ -1,0 +1,10 @@
+# Version floors are the minimum known to provide the APIs used here (e.g. openai Responses API >= 1.66).
+# Pin exact versions with `pip freeze > requirements.lock` after installing: this repo was built offline and could not resolve latest versions.
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+openai>=1.66
+anthropic>=0.40
+google-genai>=1.0
+python-pptx>=1.0
+python-docx>=1.1

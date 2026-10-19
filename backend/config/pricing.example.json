@@ -1,0 +1,6 @@
+{
+  "_comment": "Optional. Fill in USD prices from each provider's CURRENT pricing page, then copy to pricing.json and set PRICING_FILE. No prices are bundled because they change and cannot be verified offline. null = unknown.",
+  "openai":    { "your-model-name": { "input_per_mtok": null, "output_per_mtok": null, "per_image": null } },
+  "anthropic": { "your-model-name": { "input_per_mtok": null, "output_per_mtok": null } },
+  "gemini":    { "your-model-name": { "input_per_mtok": null, "output_per_mtok": null, "per_image": null } }
+}
