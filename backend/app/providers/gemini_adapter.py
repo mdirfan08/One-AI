@@ -11,7 +11,7 @@ class GeminiAdapter(ProviderAdapter):
     base_capabilities = frozenset({TEXT, JSON, CODE})
     # Suggestions only; override via GEMINI_MODEL / GEMINI_IMAGE_MODEL or Settings. Image-capable
     # model names and free-tier availability vary: check Google's docs before enabling.
-    default_model = "gemini-2.5-flash"
+    default_model = "gemini-3.8-flash"
     default_image_model = ""   # empty = image generation disabled until you choose a model
 
     @property
