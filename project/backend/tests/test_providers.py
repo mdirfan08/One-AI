@@ -2,13 +2,13 @@ import base64
 import unittest
 from types import SimpleNamespace as NS
 
-from app.core.capabilities import IMAGE_GEN
-from app.logging_utils import REDACTOR
-from app.providers.anthropic_adapter import AnthropicAdapter
-from app.providers.base import (CredentialStore, GenerationRequest, ProviderError, UnsupportedCapability, classify_exception)
-from app.providers.demo import DemoProvider
-from app.providers.gemini_adapter import GeminiAdapter
-from app.providers.openai_adapter import OpenAIAdapter
+from project.backend.app.core.capabilities import IMAGE_GEN
+from project.backend.app.logging_utils import REDACTOR
+from project.backend.app.providers.anthropic_adapter import AnthropicAdapter
+from project.backend.app.providers.base import (CredentialStore, GenerationRequest, ProviderError, UnsupportedCapability, classify_exception)
+from project.backend.app.providers.demo import DemoProvider
+from project.backend.app.providers.gemini_adapter import GeminiAdapter
+from project.backend.app.providers.openai_adapter import OpenAIAdapter
 
 REQ = GenerationRequest(system="sys", prompt="hello", json_mode=True, max_output_tokens=50)
 

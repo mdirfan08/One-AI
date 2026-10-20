@@ -4,12 +4,12 @@ import unittest
 
 try:
     from fastapi.testclient import TestClient
-    from app.api import create_app
+    from project.backend.app.api import create_app
     HAVE = True
 except ImportError:
     HAVE = False
 
-from tests.helpers import make_service
+from project.backend.tests.helpers import make_service
 
 
 @unittest.skipUnless(HAVE, "fastapi/httpx not installed")

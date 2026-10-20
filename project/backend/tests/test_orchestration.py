@@ -3,13 +3,13 @@ import threading
 import time
 import unittest
 
-from app.core.capabilities import TEXT, JSON, CODE, IMAGE_GEN
-from app.core.router import Router
-from app.core.pricing import PricingTable
-from app.providers.base import CredentialStore, ProviderError
-from app.providers.registry import ProviderRegistry
-from app.service import Conflict, Invalid, NotFound, ProjectService
-from tests.helpers import FakeRunner, Mock, make_service, new_project, plan_json, task
+from project.backend.app.core.capabilities import TEXT, JSON, CODE, IMAGE_GEN
+from project.backend.app.core.router import Router
+from project.backend.app.core.pricing import PricingTable
+from project.backend.app.providers.base import CredentialStore, ProviderError
+from project.backend.app.providers.registry import ProviderRegistry
+from project.backend.app.service import Conflict, Invalid, NotFound, ProjectService
+from project.backend.tests.helpers import FakeRunner, Mock, make_service, new_project, plan_json, task
 
 
 def planner(plan, other=None):

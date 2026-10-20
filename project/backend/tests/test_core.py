@@ -1,14 +1,14 @@
 import unittest
 
-from app.config import Limits
-from app.core.budget import Budget, BudgetExceeded
-from app.core.graph import find_cycle, topo_layers
-from app.core.pricing import PricingTable
-from app.core.schemas import PlanValidationError, parse_plan
-from app.core.workspace import CommandRunner, Workspace, WorkspaceError, parse_file_blocks
-from app.core.exporters import build_docx, build_pptx, parse_json_loose
-from app.logging_utils import REDACTOR, redact
-from tests.helpers import plan_json, task
+from project.backend.app.config import Limits
+from project.backend.app.core.budget import Budget, BudgetExceeded
+from project.backend.app.core.graph import find_cycle, topo_layers
+from project.backend.app.core.pricing import PricingTable
+from project.backend.app.core.schemas import PlanValidationError, parse_plan
+from project.backend.app.core.workspace import CommandRunner, Workspace, WorkspaceError, parse_file_blocks
+from project.backend.app.core.exporters import build_docx, build_pptx, parse_json_loose
+from project.backend.app.logging_utils import REDACTOR, redact
+from project.backend.tests.helpers import plan_json, task
 import json, tempfile
 from pathlib import Path
 

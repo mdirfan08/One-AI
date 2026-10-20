@@ -3,12 +3,12 @@ import tempfile
 import threading
 from pathlib import Path
 
-from app.config import AppConfig
-from app.core.capabilities import TEXT, JSON, CODE, IMAGE_GEN
-from app.core.workspace import CommandResult
-from app.providers.base import CredentialStore, GenerationResult, ImageResult, ProviderAdapter
-from app.providers.registry import ProviderRegistry
-from app.service import ProjectService
+from project.backend.app.config import AppConfig
+from project.backend.app.core.capabilities import TEXT, JSON, CODE, IMAGE_GEN
+from project.backend.app.core.workspace import CommandResult
+from project.backend.app.providers.base import CredentialStore, GenerationResult, ImageResult, ProviderAdapter
+from project.backend.app.providers.registry import ProviderRegistry
+from project.backend.app.service import ProjectService
 
 
 class Mock(ProviderAdapter):
