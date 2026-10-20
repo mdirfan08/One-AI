@@ -344,7 +344,24 @@ class Executor:
         if task.kind == "code_files" and not post.problems:
             self._verify(ctx, task, adapter, post, rec)
         produced = {a.type for a in post.artifacts}
-        evaluation = self.evaluator.evaluate(task, post.text, produced, post.problems, self._judge(ctx, task, adapter, post))
+        judge_post = post
+        if task.kind == "code_files":
+            source_text = "\n\n".join(
+                f"=== FILE: {path} ===\n{content}\n=== END FILE ==="
+                for path, content in ctx.ws.files().items()
+            )
+            if source_text:
+                judge_post = Post(
+                    text=source_text,
+                    artifacts=post.artifacts,
+                    problems=post.problems,
+                    simulated=post.simulated,
+                    meta=post.meta,
+                )
+        evaluation = self.evaluator.evaluate(
+            task, post.text, produced, post.problems,
+            self._judge(ctx, task, adapter, judge_post)
+        )
         for key in ("verification", "repair_changes", "changes"):
             if key in post.meta:
                 evaluation[key] = post.meta[key]
